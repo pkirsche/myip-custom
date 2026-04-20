@@ -84,9 +84,9 @@ const manualRun = ref(false);
 const intervalId = ref(3000);
 
 const connectivityTests = reactive([
-  { id: 'taobao',     name: 'Taobao',     icon: Store,              url: 'https://www.taobao.com/favicon.ico?',                        status: t('connectivity.StatusWait'), time: 0, mintime: 0 },
-  { id: 'baidu',      name: 'Baidu',      icon: Compass,            url: 'https://www.baidu.com/favicon.ico?',                         status: t('connectivity.StatusWait'), time: 0, mintime: 0 },
-  { id: 'wechat',     name: 'WeChat',     icon: MessageCircle,      url: 'https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico?',    status: t('connectivity.StatusWait'), time: 0, mintime: 0 },
+  { id: 'hetzner',    name: 'Hetzner',    icon: Store,              url: 'https://www.hetzner.com/favicon.ico?',                       status: t('connectivity.StatusWait'), time: 0, mintime: 0 },
+  { id: 'ionos',      name: 'IONOS',      icon: Compass,            url: 'https://www.ionos.de/favicon.ico?',                          status: t('connectivity.StatusWait'), time: 0, mintime: 0 },
+  { id: 'netcup',     name: 'Netcup',     icon: Cloud,              url: 'https://www.netcup.de/favicon.ico?',                         status: t('connectivity.StatusWait'), time: 0, mintime: 0 },
   { id: 'google',     name: 'Google',     icon: Chrome,             url: 'https://www.google.com/favicon.ico?',                        status: t('connectivity.StatusWait'), time: 0, mintime: 0 },
   { id: 'cloudflare', name: 'Cloudflare', icon: Cloud,              url: 'https://www.cloudflare.com/favicon.ico?',                    status: t('connectivity.StatusWait'), time: 0, mintime: 0 },
   { id: 'youtube',    name: 'YouTube',    icon: Youtube,            url: 'https://www.youtube.com/favicon.ico?',                       status: t('connectivity.StatusWait'), time: 0, mintime: 0 },
