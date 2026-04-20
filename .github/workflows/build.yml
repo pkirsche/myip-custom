@@ -2,33 +2,32 @@ name: Build and Push myip Image
 
 on:
   schedule:
-    - cron: '0 3 * * 1'  # Jeden Montag um 3 Uhr
+    - cron: '0 3 * * *'  # Täglich um 3 Uhr prüfen
   workflow_dispatch:
   push:
     branches: [main]
 
 jobs:
-  build:
+  check-upstream:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
+    outputs:
+      should_build: ${{ steps.check.outputs.should_build }}
+      upstream_version: ${{ steps.check.outputs.upstream_version }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build and Push
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: |
-            ghcr.io/pkirsche/myip-custom:latest
+      - name: Check upstream release
+        id: check
+        run: |
+          # Aktuelle upstream Version holen
+          UPSTREAM=$(curl -s https://api.github.com/repos/jason5ng32/MyIP/releases/latest | jq -r '.tag_name')
+          echo "Upstream version: $UPSTREAM"
+          
+          # Gespeicherte Version lesen (aus Cache)
+          CACHED=$(curl -s "https://raw.githubusercontent.com/pkirsche/myip-custom/main/.upstream-version" 2>/dev/null || echo "none")
+          echo "Cached version: $CACHED"
+          
+          if [ "$UPSTREAM" != "$CACHED" ]; then
+            echo "New version detected: $UPSTREAM"
+            echo "should_build=true" >> $GITHUB_OUTPUT
+          else
+            echo "No new version, skipping build"
+            echo "should_build=false" >> $
