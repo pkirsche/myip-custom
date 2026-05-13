@@ -161,7 +161,7 @@ const MAX_CUSTOM_TARGETS = 9;
 const connectivityTests = reactive([
   { id: 'hetzner', name: 'Hetzner', icon: Store, url: 'https://www.hetzner.com/favicon.ico?', status: t('connectivity.StatusWait'), time: 0, mintime: 0 },
   { id: 'ionos', name: 'IONOS', icon: Compass, url: 'https://www.ionos.de/favicon.ico?', status: t('connectivity.StatusWait'), time: 0, mintime: 0 },
-  { id: 'heise', name: 'Heise', icon: Cloud, url: 'https://www.heise.de/favicon.ico?',
+  { id: 'heise', name: 'Heise', icon: Cloud, url: 'https://www.heise.de/favicon.ico?', status: t('connectivity.StatusWait'), time: 0, mintime: 0 },
   { id: 'google', name: 'Google', icon: Chrome, url: 'https://www.google.com/favicon.ico', status: t('connectivity.StatusWait'), time: 0, mintime: 0, roundResults: [] },
   { id: 'cloudflare', name: 'Cloudflare', icon: Cloud, url: 'https://www.cloudflare.com/favicon.ico', status: t('connectivity.StatusWait'), time: 0, mintime: 0, roundResults: [] },
   { id: 'youtube', name: 'YouTube', icon: Youtube, url: 'https://www.youtube.com/favicon.ico', status: t('connectivity.StatusWait'), time: 0, mintime: 0, roundResults: [] },
