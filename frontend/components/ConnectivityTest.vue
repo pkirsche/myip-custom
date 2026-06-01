@@ -159,8 +159,9 @@ const MAX_CUSTOM_TARGETS = 9;
 // independent of the best-of-N face/text. `time` powers the per-dot hover
 // tooltip; for `tone: 'fail'` rounds it stays 0. Bootstrap-only writer.
 const connectivityTests = reactive([
-  { id: 'wechat', name: 'WeChat', icon: 'ri:wechat-line', url: 'https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico', status: t('connectivity.StatusWait'), time: 0, mintime: 0, roundResults: [] },
-  { id: 'taobao', name: 'Taobao', icon: 'ri:taobao-line', url: 'https://www.taobao.com/favicon.ico', status: t('connectivity.StatusWait'), time: 0, mintime: 0, roundResults: [] },
+  { id: 'hetzner',    name: 'Hetzner',    icon: 'ri:store-line',    url: 'https://www.hetzner.com/favicon.ico?', status: t('connectivity.StatusWait'), time: 0, mintime: 0, roundResults: [] },
+  { id: 'ionos',      name: 'IONOS',      icon: 'ri:compass-line',  url: 'https://www.ionos.de/favicon.ico?', status: t('connectivity.StatusWait'), time: 0, mintime: 0, roundResults: [] },
+  { id: 'heise',      name: 'Heise',      icon: 'ri:cloud-line',    url: 'https://www.heise.de/favicon.ico?', status: t('connectivity.StatusWait'), time: 0, mintime: 0, roundResults: [] },
   { id: 'google', name: 'Google', icon: 'ri:google-line', url: 'https://www.google.com/favicon.ico', status: t('connectivity.StatusWait'), time: 0, mintime: 0, roundResults: [] },
   // Use speed.cloudflare.com (not www.cloudflare.com): the marketing site
   // attaches `Link: rel=preload` headers for its brand fonts to every response
